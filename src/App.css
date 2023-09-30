@@ -37,7 +37,7 @@ nav {
     font-size: 15px;
 }
 
-#sign-up-btn {
+.cyan-btn {
     background: var(--Cyan);
     color: white;
     border-radius: 25px;
@@ -52,12 +52,68 @@ nav {
         border-radius: 15px;
         margin: 15px 0;
     }
-    #navbarSupportedContent ul li, #navbarSupportedContent button {
+
+    #navbarSupportedContent ul li,
+    #navbarSupportedContent button {
         margin: 15px;
     }
-    #navbarSupportedContent ul li a, #navbarSupportedContent button {
+
+    #navbarSupportedContent ul li a,
+    #navbarSupportedContent button {
         font-weight: 900;
         color: white;
         padding: 5px;
+    }
+}
+
+section h1 {
+    font-size: 4em;
+    font-weight: bolder;
+}
+
+section div p {
+    width: 60%;
+    font-weight: light;
+    color: var(--GrayishViolet)
+}
+
+section div#image-container {
+    overflow: hidden;
+}
+
+@media screen and (max-width: 480px) {
+    section {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+
+    section h1 {
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    section div p {
+        text-align: center;
+        width: 80%;
+        padding: 5px;
+        margin: 5px;
+        margin: auto;
+    }
+
+    section div {
+        text-align: center;
+    }
+
+    section div#image-container {
+        width: 100%;
+    }
+
+    section div#image-container img {
+        width: 130%;
+    }
+
+    #get-started-btn {
+        font-size: 1.25em;
+        margin: 15px 0;
     }
 }
