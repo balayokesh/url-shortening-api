@@ -44,3 +44,20 @@ nav {
     font-weight: 700;
     font-size: 15px;
 }
+
+@media screen and (max-width: 480px) {
+    #navbarSupportedContent {
+        background: var(--DarkViolet);
+        padding: 5px;
+        border-radius: 15px;
+        margin: 15px 0;
+    }
+    #navbarSupportedContent ul li, #navbarSupportedContent button {
+        margin: 15px;
+    }
+    #navbarSupportedContent ul li a, #navbarSupportedContent button {
+        font-weight: 900;
+        color: white;
+        padding: 5px;
+    }
+}

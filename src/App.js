@@ -22,6 +22,7 @@ function App() {
               <a className='nav-link gray-violet' href='#'>Resources</a>
             </li>
           </ul>
+          <hr className='text-white m-3' />
           <div className='navbar-nav'>
             <button className='btn gray-violet'>Login</button>
             <button className='btn px-4' id='sign-up-btn'>Sign Up</button>
