@@ -34,7 +34,7 @@ function App() {
 
       <section className='d-flex align-items-center ms-sm-5 ps-sm-5'>
         <div className='me-sm-5'>
-          <h1 style={{color: 'var(--VeryDarkBlue)'}}>
+          <h1 style={{ color: 'var(--VeryDarkBlue)' }}>
             More than just shorter links
           </h1>
           <p>
@@ -47,6 +47,15 @@ function App() {
           <img src={illustrationWorking} alt='Illustration working' />
         </div>
       </section>
+
+      <div id='color-wrapper'>
+        <section id='section2' className='m-sm-5 px-sm-5'>
+          <div className='border p-sm-5 d-flex align-items-center justify-content-around'>
+            <input type="text" className='form-control p-sm-3 w-sm-75' placeholder='Shorten a link here...' />
+            <button className='cyan-btn py-sm-3'>Shorten it!</button>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

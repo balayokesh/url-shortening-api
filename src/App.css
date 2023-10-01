@@ -117,3 +117,59 @@ section div#image-container {
         margin: 15px 0;
     }
 }
+
+#section2 div {
+    background: url('./images/bg-shorten-desktop.svg');
+    background-color: var(--DarkViolet);
+    border-radius: 12px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#section2 div input {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    min-width: 80%;
+    font-weight: light;
+    color: var(--GrayishViolet)
+}
+
+#section2 div button {
+    border-radius: 10px;
+    font-size: 1.1em;
+    margin-left: 20px;
+    width: 100%;
+}
+
+#color-wrapper {
+    background: -webkit-linear-gradient(90deg, #eff1f7  50%, white 0%);
+}
+
+@media screen and (max-width: 480px) {
+    #section2 {
+        background: linear-gradient('white', var(--GrayishViolet));
+    }
+
+    #section2 div {
+        background: url('./images/bg-shorten-mobile.svg');
+        background-color: var(--DarkViolet);
+        background-repeat: no-repeat;
+        background-position: top right;
+        border-radius: 12px;
+        flex-wrap: wrap;
+        margin: 15px;
+    }
+
+    #section2 div input {
+        margin: 25px 25px 15px 25px;
+        padding: 10px;
+    }
+
+    #section2 div button {
+        border-radius: 10px;
+        font-size: 1.1em;
+        padding: 9px;
+        margin: 0 25px 25px 25px;
+    }
+}
