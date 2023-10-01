@@ -5,7 +5,10 @@ import illustrationWorking from './images/illustration-working.svg';
 import iconBrandRecognition from './images/icon-brand-recognition.svg';
 import iconDetailedRecords from './images/icon-detailed-records.svg';
 import iconFullyCustomizable from './images/icon-fully-customizable.svg';
-import bgBoostDesktop from './images/bg-boost-desktop.svg';
+import iconFacebook from './images/icon-facebook.svg';
+import iconInstagram from './images/icon-instagram.svg';
+import iconPinterest from './images/icon-pinterest.svg';
+import iconTwitter from './images/icon-twitter.svg';
 
 function App() {
   return (
@@ -102,6 +105,45 @@ function App() {
         <h2>Boost your links today</h2>
         <button className='cyan-btn px-5 py-2 mt-3'>Get Started</button>
       </section>
+
+      <footer className='d-flex p-5 justify-content-around flex-wrap'>
+        <h3>
+          Shortly
+        </h3>
+        <div>
+          <h6>Features</h6>
+          <p>Link Shortening</p>
+          <p>Branded Links</p>
+          <p>Analytics</p>
+        </div>
+        <div>
+          <h6>Resources</h6>
+          <p>Blog</p>
+          <p>Develoeprs</p>
+          <p>Support</p>
+        </div>
+        <div>
+          <h6>Company</h6>
+          <p>About</p>
+          <p>Our Team</p>
+          <p>Careers</p>
+          <p>Contact</p>
+        </div>
+        <div>
+          <a href="#">
+            <img src={iconFacebook} alt="Facebook" />
+          </a>
+          <a href="#">
+            <img src={iconTwitter} alt="Twitter" />
+          </a>
+          <a href="#">
+            <img src={iconPinterest} alt="Pinterest" />
+          </a>
+          <a href="#">
+            <img src={iconInstagram} alt="Instagram" />
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
