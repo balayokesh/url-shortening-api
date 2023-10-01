@@ -180,7 +180,6 @@ nav {
 
 #section3 h1 {
     font-weight: 800;
-
 }
 
 #section3 p {
@@ -247,4 +246,22 @@ nav {
     .blue-ruler {
         width: 100px;
     }
+}
+
+#section4 {
+    background: url('./images/bg-shorten-desktop.svg');
+    background-color: var(--DarkViolet);
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#section4 h2 {
+    color: white;
+    font-weight: 800;
+}
+
+#section4 button {
+    border-radius: 20px;
+    font-size: 1.1em;
 }

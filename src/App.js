@@ -5,6 +5,7 @@ import illustrationWorking from './images/illustration-working.svg';
 import iconBrandRecognition from './images/icon-brand-recognition.svg';
 import iconDetailedRecords from './images/icon-detailed-records.svg';
 import iconFullyCustomizable from './images/icon-fully-customizable.svg';
+import bgBoostDesktop from './images/bg-boost-desktop.svg';
 
 function App() {
   return (
@@ -60,7 +61,7 @@ function App() {
         </section>
       </div>
 
-      <section id='section3' className='pt-5'>
+      <section id='section3' className='pt-5 pb-5'>
         <div className='text-center my-sm-5'>
           <h1>Advanced statistics</h1>
           <p className='pt-3 pb-5'>Track how your links are performing across the web with our
@@ -95,6 +96,11 @@ function App() {
               links, supercharging audience engagement.</p>
           </div>
         </div>
+      </section>
+
+      <section id='section4' className='p-3 py-4 p-sm-5'>
+        <h2>Boost your links today</h2>
+        <button className='cyan-btn px-5 py-2 mt-3'>Get Started</button>
       </section>
     </div>
   );
