@@ -2,6 +2,9 @@ import './App.css';
 
 import logo from './images/logo.svg';
 import illustrationWorking from './images/illustration-working.svg';
+import iconBrandRecognition from './images/icon-brand-recognition.svg';
+import iconDetailedRecords from './images/icon-detailed-records.svg';
+import iconFullyCustomizable from './images/icon-fully-customizable.svg';
 
 function App() {
   return (
@@ -32,7 +35,7 @@ function App() {
         </div>
       </nav>
 
-      <section className='d-flex align-items-center ms-sm-5 ps-sm-5'>
+      <section className='d-flex align-items-center ms-sm-5 ps-sm-5 mb-5' id='section1'>
         <div className='me-sm-5'>
           <h1 style={{ color: 'var(--VeryDarkBlue)' }}>
             More than just shorter links
@@ -49,13 +52,50 @@ function App() {
       </section>
 
       <div id='color-wrapper'>
-        <section id='section2' className='m-sm-5 px-sm-5'>
+        <section id='section2' className='mx-sm-5 px-sm-5'>
           <div className='border p-sm-5 d-flex align-items-center justify-content-around'>
             <input type="text" className='form-control p-sm-3 w-sm-75' placeholder='Shorten a link here...' />
             <button className='cyan-btn py-sm-3'>Shorten it!</button>
           </div>
         </section>
       </div>
+
+      <section id='section3' className='pt-5'>
+        <div className='text-center my-sm-5'>
+          <h1>Advanced statistics</h1>
+          <p className='pt-3 pb-5'>Track how your links are performing across the web with our
+            advanced statistics dashboard.</p>
+        </div>
+
+        <div className='d-flex px-sm-5 mx-sm-5 mt-5' id='features'>
+          <div className='bg-white rounded m-3 p-4 position-relative align-self-start'>
+            <div className='d-flex justify-content-center align-items-center position-absolute' >
+              <img src={iconBrandRecognition} alt='Brand Recognition' />
+            </div>
+            <h4 className='mt-4'>Brand Recognition</h4>
+            <p>Boost your brand recognition with each click. Generic links don’t
+              mean a thing. Branded links help instil confidence in your content.</p>
+          </div>
+          <hr className='blue-ruler' />
+          <div className='bg-white rounded m-3 p-4 position-relative align-self-center'>
+            <div className='d-flex justify-content-center align-items-center position-absolute'>
+              <img src={iconDetailedRecords} alt='Brand Recognition' />
+            </div>
+            <h4 className='mt-4'>Detailed Records</h4>
+            <p>Gain insights into who is clicking your links. Knowing when and where
+              people engage with your content helps inform better decisions.</p>
+          </div>
+          <hr className='blue-ruler' />
+          <div className='bg-white rounded m-3 p-4 position-relative align-self-end'>
+            <div className='d-flex justify-content-center align-items-center position-absolute'>
+              <img src={iconFullyCustomizable} alt='Brand Recognition' />
+            </div>
+            <h4 className='mt-4'>Fully Customizable</h4>
+            <p>Improve brand awareness and content discoverability through customizable
+              links, supercharging audience engagement.</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
