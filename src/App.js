@@ -34,7 +34,7 @@ function App() {
           <hr className='text-white m-3' />
           <div className='navbar-nav'>
             <button className='btn gray-violet'>Login</button>
-            <button className='btn px-4 cyan-btn'>Sign Up</button>
+            <button className='btn px-4 cyan-btn button-hover'>Sign Up</button>
           </div>
         </div>
       </nav>
@@ -48,7 +48,7 @@ function App() {
             Build your brand’s recognition and get detailed insights
             on how your links are performing.
           </p>
-          <button className='btn px-4 py-2 cyan-btn' id='get-started-btn'>Get Started</button>
+          <button className='btn px-4 py-2 cyan-btn button-hover' id='get-started-btn'>Get Started</button>
         </div>
         <div id='image-container'>
           <img src={illustrationWorking} alt='Illustration working' />
@@ -59,7 +59,7 @@ function App() {
         <section id='section2' className='mx-sm-5 px-sm-5'>
           <div className='border p-sm-5 d-flex align-items-center justify-content-around'>
             <input type="text" className='form-control p-sm-3 w-sm-75' placeholder='Shorten a link here...' />
-            <button className='cyan-btn py-sm-3'>Shorten it!</button>
+            <button className='cyan-btn py-sm-3 button-hover'>Shorten it!</button>
           </div>
         </section>
       </div>
@@ -103,7 +103,7 @@ function App() {
 
       <section id='section4' className='p-3 py-4 p-sm-5'>
         <h2>Boost your links today</h2>
-        <button className='cyan-btn px-5 py-2 mt-3'>Get Started</button>
+        <button className='cyan-btn px-5 py-2 mt-3 button-hover'>Get Started</button>
       </section>
 
       <footer className='d-flex p-5 justify-content-around flex-wrap  '>
@@ -119,7 +119,7 @@ function App() {
         <div>
           <h6>Resources</h6>
           <p>Blog</p>
-          <p>Develoeprs</p>
+          <p>Developers</p>
           <p>Support</p>
         </div>
         <div>

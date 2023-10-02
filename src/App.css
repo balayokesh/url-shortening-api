@@ -33,6 +33,11 @@ button {
     font-weight: 700;
 }
 
+.button-hover:hover {
+    background: rgb(150, 199, 199);
+    color: white;
+}
+
 nav {
     font-size: 15px;
 }
@@ -288,6 +293,16 @@ footer p {
     color: var(--GrayishViolet);
     margin: 5px 0;
     font-size: .95em;
+}
+
+footer div p:hover {
+    color: cyan;
+    font-weight: 700;
+}
+
+footer div a img:hover {
+    background: var(--Cyan);
+    border-radius: 5px;
 }
 
 footer a img {
