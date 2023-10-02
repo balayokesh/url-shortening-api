@@ -106,7 +106,7 @@ function App() {
         <button className='cyan-btn px-5 py-2 mt-3'>Get Started</button>
       </section>
 
-      <footer className='d-flex p-5 justify-content-around flex-wrap'>
+      <footer className='d-flex p-5 justify-content-around flex-wrap  '>
         <h3>
           Shortly
         </h3>
