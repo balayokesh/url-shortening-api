@@ -43,7 +43,7 @@ function App() {
       axios.post(`https://api.shrtco.de/v2/shorten?url=${fullUrl}`).then(response => {
         const shortLink = response.data.result.full_short_link;
         localStorage.setItem(fullUrl, shortLink);
-        setLinks([...links, {fullUrl, shortLink}])
+        setLinks([...links, { fullUrl, shortLink }])
       }).catch(err => {
         alert("Error occured: " + err);
       })
@@ -91,7 +91,7 @@ function App() {
             Build your brand’s recognition and get detailed insights
             on how your links are performing.
           </p>
-          <button className='btn px-4 py-2 cyan-btn button-hover' id='get-started-btn'>Get Started</button>
+          <button className='btn px-4 py-2 cyan-btn button-hover' id='get-started-btn' onClick={() => window.location.href='#section2'}>Get Started</button>
         </div>
         <div id='image-container'>
           <img src={illustrationWorking} alt='Illustration working' />
@@ -159,7 +159,7 @@ function App() {
 
       <section id='section4' className='p-3 py-4 p-sm-5'>
         <h2>Boost your links today</h2>
-        <button className='cyan-btn px-5 py-2 mt-3 button-hover'>Get Started</button>
+        <button className='cyan-btn px-5 py-2 mt-3 button-hover' onClick={() => window.location.href='#section2'}>Get Started</button>
       </section>
 
       <footer className='d-flex p-5 justify-content-around flex-wrap'>
