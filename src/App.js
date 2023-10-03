@@ -27,7 +27,7 @@ function App() {
       console.log(links);
     }
     setLinks(links);
-  }, [links])
+  });
 
 
   const shortenLink = () => {

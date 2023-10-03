@@ -2,8 +2,11 @@ import '../styles/link.css';
 
 export default function Link(props) {
 
-    const handleCopy = link => {
-        alert(link);
+    const handleCopy = (link, event) => {
+        navigator.clipboard.writeText(link);
+        let currentElem = event.target;
+        currentElem.style.backgroundColor = 'hsl(260, 8%, 14%)';
+        currentElem.textContent = 'Copied!';
     }
 
     return (
@@ -11,7 +14,7 @@ export default function Link(props) {
             <p id='link' className='m-2'>{props.link}</p>
             <div className="d-flex" id='inner-container'>
                 <p id='short-link' className='m-2'>{props.shortLink}</p>
-                <button onClick={() => handleCopy(props.shortLink)} className="btn px-4 rounded py-2" id='copy-btn'>Copy</button>
+                <button onClick={(event) => handleCopy(props.shortLink, event)} className="btn px-4 rounded py-2" id='copy-btn'>Copy</button>
             </div>
         </div>
     )
