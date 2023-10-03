@@ -27,7 +27,7 @@ function App() {
       console.log(links);
     }
     setLinks(links);
-  }, [])
+  }, [links])
 
 
   const shortenLink = () => {
@@ -43,6 +43,7 @@ function App() {
       axios.post(`https://api.shrtco.de/v2/shorten?url=${fullUrl}`).then(response => {
         const shortLink = response.data.result.full_short_link;
         localStorage.setItem(fullUrl, shortLink);
+        setLinks([...links, {fullUrl, shortLink}])
       }).catch(err => {
         alert("Error occured: " + err);
       })
