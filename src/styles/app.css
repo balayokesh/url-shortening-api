@@ -123,8 +123,8 @@ nav {
     }
 }
 
-#section2 div {
-    background: url('./images/bg-shorten-desktop.svg');
+#section2 #link-form {
+    background: url('../images/bg-shorten-desktop.svg');
     background-color: var(--DarkViolet);
     border-radius: 12px;
     text-align: center;
@@ -132,19 +132,18 @@ nav {
     background-size: cover;
 }
 
-#section2 div input {
+#full-url {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    min-width: 80%;
     font-weight: light;
     color: var(--GrayishViolet)
 }
 
-#section2 div button {
+#section2 #link-form button {
     border-radius: 10px;
     font-size: 1.1em;
     margin-left: 20px;
-    width: 100%;
+    width: 25%;
     border: none;
 }
 
@@ -157,8 +156,8 @@ nav {
         background: linear-gradient('white', var(--GrayishViolet));
     }
 
-    #section2 div {
-        background: url('./images/bg-shorten-mobile.svg');
+    #section2 #link-form {
+        background: url('../images/bg-shorten-mobile.svg');
         background-color: var(--DarkViolet);
         background-repeat: no-repeat;
         background-position: top right;
@@ -167,16 +166,20 @@ nav {
         margin: 15px 15px 0 15px;
     }
 
-    #section2 div input {
-        margin: 25px 25px 15px 25px;
+    #full-url {
         padding: 10px;
     }
 
-    #section2 div button {
+    #section2 #link-form button {
         border-radius: 10px;
         font-size: 1.1em;
         padding: 9px;
         margin: 0 25px 25px 25px;
+        width: 100%;
+    }
+
+    #shorten-btn {
+        width: 100%;
     }
 }
 
@@ -255,7 +258,7 @@ nav {
 }
 
 #section4 {
-    background: url('./images/bg-shorten-desktop.svg');
+    background: url('../images/bg-shorten-desktop.svg');
     background-color: var(--DarkViolet);
     text-align: center;
     background-repeat: no-repeat;

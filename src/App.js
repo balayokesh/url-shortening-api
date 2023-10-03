@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/app.css';
 import axios from 'axios';
 
 import logo from './images/logo.svg';
@@ -10,10 +10,27 @@ import iconFacebook from './images/icon-facebook.svg';
 import iconInstagram from './images/icon-instagram.svg';
 import iconPinterest from './images/icon-pinterest.svg';
 import iconTwitter from './images/icon-twitter.svg';
+import { useEffect, useState } from 'react';
+import Link from './components/Link';
 
 function App() {
 
-  const shortenLink = async () => {
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    // Get links from localStorage
+    let links = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      const value = localStorage.getItem(key);
+      links.push({ key, value });
+      console.log(links);
+    }
+    setLinks(links);
+  }, [])
+
+
+  const shortenLink = () => {
     let fullUrl = document.getElementById('full-url').value;
     console.log(fullUrl);
 
@@ -25,18 +42,9 @@ function App() {
     else {
       axios.post(`https://api.shrtco.de/v2/shorten?url=${fullUrl}`).then(response => {
         const shortLink = response.data.result.full_short_link;
-
-        if ('links' in localStorage) {
-          let storedLinks = [];
-          storedLinks = JSON.parse(localStorage.links);
-          storedLinks.push(shortLink)
-          console.log(storedLinks);
-          localStorage.setItem('links', JSON.stringify(storedLinks));
-        }
-        else {
-          let links = [shortLink];
-          localStorage.setItem('links', JSON.stringify(links));
-        }
+        localStorage.setItem(fullUrl, shortLink);
+      }).catch(err => {
+        alert("Error occured: " + err);
       })
 
       document.getElementById('full-url').value = "";
@@ -90,14 +98,25 @@ function App() {
       </section>
 
       <div id='color-wrapper'>
-        <section id='section2' className='mx-sm-5 px-sm-5 position-relative'>
-          <div className='border p-sm-5 d-flex align-items-center justify-content-around'>
-            <input type="text" className='form-control p-sm-3 w-sm-75' id='full-url' placeholder='Shorten a link here...' />
-            <button className='cyan-btn py-sm-3 button-hover' onClick={shortenLink}>Shorten it!</button>
-            <span className='d-none text-danger position-absolute fst-italic' style={{ bottom: 10, left: 90 }} id='error-msg'>Please add a link</span>
+        <section id='section2' className='mx-sm-5 px-sm-5'>
+          <div className='p-sm-5 d-flex align-items-center justify-content-around' id='link-form'>
+            <div className='w-100 p-4 p-sm-0'>
+              <input type="text" className='form-control py-3' id='full-url' placeholder='Shorten a link here...' />
+              <span className='d-none text-danger fst-italic text-start' id='error-msg'>Please add a link</span>
+            </div>
+            <button className='cyan-btn py-sm-3 button-hover' onClick={shortenLink} id='shorten-btn'>Shorten it!</button>
           </div>
-
         </section>
+      </div>
+
+      <div className='py-3 p-3 px-sm-5' style={{ background: '#eff1f7' }}>
+        <div id='links-container' className='mx-sm-5'>
+          {
+            links.map((pair, index) => (
+              <Link key={index} link={pair.key} shortLink={pair.value} />
+            ))
+          }
+        </div>
       </div>
 
       <section id='section3' className='pt-5 pb-5'>
@@ -142,7 +161,7 @@ function App() {
         <button className='cyan-btn px-5 py-2 mt-3 button-hover'>Get Started</button>
       </section>
 
-      <footer className='d-flex p-5 justify-content-around flex-wrap  '>
+      <footer className='d-flex p-5 justify-content-around flex-wrap'>
         <h3>
           Shortly
         </h3>

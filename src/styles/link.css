@@ -1,0 +1,32 @@
+#copy-btn {
+    background: hsl(180, 66%, 49%);;
+    color: white;
+    font-weight: 700;
+}
+
+#short-link {
+    color: hsl(180, 66%, 49%);;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+#link {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 480px) {
+    #container {
+        flex-wrap: wrap;
+    }
+    #inner-container {
+        flex-wrap: wrap;
+    }
+    #link, #short-link {
+        text-align: center;
+        width: 100%;
+    }
+    #copy-btn {
+        width: 100%;
+    }
+}
