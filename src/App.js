@@ -1,4 +1,5 @@
 import './App.css';
+import axios from 'axios';
 
 import logo from './images/logo.svg';
 import illustrationWorking from './images/illustration-working.svg';
@@ -11,6 +12,39 @@ import iconPinterest from './images/icon-pinterest.svg';
 import iconTwitter from './images/icon-twitter.svg';
 
 function App() {
+
+  const shortenLink = async () => {
+    let fullUrl = document.getElementById('full-url').value;
+    console.log(fullUrl);
+
+    if (!fullUrl) {
+      document.getElementById('error-msg').classList.remove('d-none');
+      document.getElementById('full-url').focus();
+      document.getElementById('full-url').style.border = '2px solid red';
+    }
+    else {
+      axios.post(`https://api.shrtco.de/v2/shorten?url=${fullUrl}`).then(response => {
+        const shortLink = response.data.result.full_short_link;
+
+        if ('links' in localStorage) {
+          let storedLinks = [];
+          storedLinks = JSON.parse(localStorage.links);
+          storedLinks.push(shortLink)
+          console.log(storedLinks);
+          localStorage.setItem('links', JSON.stringify(storedLinks));
+        }
+        else {
+          let links = [shortLink];
+          localStorage.setItem('links', JSON.stringify(links));
+        }
+      })
+
+      document.getElementById('full-url').value = "";
+      document.getElementById('error-msg').classList.add('d-none');
+      document.getElementById('full-url').style.border = 'none';
+    }
+  }
+
   return (
     <div>
       <nav className='navbar navbar-expand-lg bg-white bg-light mx-sm-5 m-3 px-sm-5 mt-4 mb-sm-5'>
@@ -56,11 +90,13 @@ function App() {
       </section>
 
       <div id='color-wrapper'>
-        <section id='section2' className='mx-sm-5 px-sm-5'>
+        <section id='section2' className='mx-sm-5 px-sm-5 position-relative'>
           <div className='border p-sm-5 d-flex align-items-center justify-content-around'>
-            <input type="text" className='form-control p-sm-3 w-sm-75' placeholder='Shorten a link here...' />
-            <button className='cyan-btn py-sm-3 button-hover'>Shorten it!</button>
+            <input type="text" className='form-control p-sm-3 w-sm-75' id='full-url' placeholder='Shorten a link here...' />
+            <button className='cyan-btn py-sm-3 button-hover' onClick={shortenLink}>Shorten it!</button>
+            <span className='d-none text-danger position-absolute fst-italic' style={{ bottom: 10, left: 90 }} id='error-msg'>Please add a link</span>
           </div>
+
         </section>
       </div>
 
