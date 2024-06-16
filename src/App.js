@@ -27,8 +27,7 @@ function App() {
       console.log(links);
     }
     setLinks(links);
-  });
-
+  }, []);
 
   const shortenLink = () => {
     let fullUrl = document.getElementById('full-url').value;

@@ -29,4 +29,7 @@
     #copy-btn {
         width: 100%;
     }
+    #link {
+        overflow: auto;
+    }
 }
